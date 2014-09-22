@@ -13,7 +13,9 @@
     },
     "require-dev": {
         "phpspec/phpspec": "dev-master",
-        "phpspec/nyan-formatters": "dev-master"
+        "phpspec/nyan-formatters": "dev-master",
+        "codeception/verify": "dev-master",
+        "codeception/specify": "dev-master"
     },
     "autoload": {
         "psr-0": {"": "src"}

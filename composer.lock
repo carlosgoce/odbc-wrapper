@@ -4,11 +4,83 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8bad4383fae9393443eed38684a297ae",
+    "hash": "a91bde65b3a1aed1a3f86eb4d29ee6b8",
     "packages": [
 
     ],
     "packages-dev": [
+        {
+            "name": "codeception/specify",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Codeception/Specify.git",
+                "reference": "0cabe95241bec511917e9804b211a3a91645d026"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Codeception/Specify/zipball/0cabe95241bec511917e9804b211a3a91645d026",
+                "reference": "0cabe95241bec511917e9804b211a3a91645d026",
+                "shasum": ""
+            },
+            "require": {
+                "myclabs/deep-copy": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Codeception\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Michael Bodnarchuk",
+                    "email": "davert.php@mailican.com",
+                    "homepage": "http://codeception.com"
+                }
+            ],
+            "description": "BDD code blocks for PHPUnit and Codeception",
+            "time": "2014-03-22 00:46:25"
+        },
+        {
+            "name": "codeception/verify",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Codeception/Verify.git",
+                "reference": "21897622100b9d584043ef39bcec13945352a452"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Codeception/Verify/zipball/21897622100b9d584043ef39bcec13945352a452",
+                "reference": "21897622100b9d584043ef39bcec13945352a452",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Codeception/function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Michael Bodnarchuk",
+                    "email": "davert.php@mailican.com",
+                    "homepage": "http://codeception.com"
+                }
+            ],
+            "description": "BDD assertion library for PHPUnit",
+            "time": "2014-01-22 14:43:52"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.0.2",
@@ -62,6 +134,48 @@
                 "instantiate"
             ],
             "time": "2014-08-25 15:09:25"
+        },
+        {
+            "name": "myclabs/deep-copy",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/myclabs/DeepCopy.git",
+                "reference": "f0cb3bd7eddef40adcc1a1aaeaf569ceb3164532"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/f0cb3bd7eddef40adcc1a1aaeaf569ceb3164532",
+                "reference": "f0cb3bd7eddef40adcc1a1aaeaf569ceb3164532",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "doctrine/collections": "1.*",
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DeepCopy\\": "src/DeepCopy/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Create deep copies (clones) of your objects",
+            "homepage": "https://github.com/myclabs/DeepCopy",
+            "keywords": [
+                "clone",
+                "copy",
+                "duplicate",
+                "object",
+                "object graph"
+            ],
+            "time": "2014-08-29 00:01:20"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -766,7 +880,9 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "phpspec/phpspec": 20,
-        "phpspec/nyan-formatters": 20
+        "phpspec/nyan-formatters": 20,
+        "codeception/verify": 20,
+        "codeception/specify": 20
     },
     "prefer-stable": false,
     "platform": [
