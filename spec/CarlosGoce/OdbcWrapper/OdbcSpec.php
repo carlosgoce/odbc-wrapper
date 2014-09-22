@@ -47,36 +47,35 @@ class OdbcSpec extends ObjectBehavior
         $this->isConnected()->shouldReturn(true);
     }
 
-//    function it_let_change_fetch_mode()
-//    {
-//        $this->getFetchMode()->shouldReturn(Odbc::FETCH_AS_ARRAY);
-//
-//        $this->setFechMode(Odbc::FETCH_AS_OBJECT);
-//        $this->getFetchMode()->shouldReturn(Odbc::FETCH_AS_OBJECT);
-//
-//        try {
-//            $this->setFetchMode(9999);
-//        }
-//        catch(FetchModeDoesNotExistsException $e) {
-//
-//        }
-//    }
+    function it_let_change_fetch_mode()
+    {
+        $this->getFetchMode()->shouldReturn(Odbc::FETCH_AS_ARRAY);
 
-//    function it_can_return_the_list_of_tables_of_the_connection()
-//    {
-//        $this->connect($this->connectionName);
-//
-//        $tables = $this->getTables();
-//
-//        foreach ($tables as $table) {
-//            var_dump($table);
-//        }
-//    }
+        $this->setFetchMode(Odbc::FETCH_AS_OBJECT);
+        $this->getFetchMode()->shouldReturn(Odbc::FETCH_AS_OBJECT);
 
-//    function it_performs_queries()
-//    {
-//        $this->connect($this->connectionName);
-//
-//        $result = $this->query("SELECT * FROM codpais");
-//    }
+        try {
+            $this->setFetchMode(9999);
+        }
+        catch(FetchModeDoesNotExistsException $e) {
+
+        }
+    }
+
+    function it_can_return_the_list_of_tables_of_the_connection()
+    {
+        $this->connect($this->connectionName);
+
+        $tables = $this->getTables()->getWrappedObject();
+
+        expect(is_array($tables));
+    }
+
+    function it_performs_queries()
+    {
+        $this->connect($this->connectionName);
+        $result = $this->query("SELECT * FROM codpais")->getWrappedObject();
+
+        expect(is_array($result));
+    }
 }

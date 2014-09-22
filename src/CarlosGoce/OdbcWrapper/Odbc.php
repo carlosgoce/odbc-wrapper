@@ -55,7 +55,7 @@ class Odbc
 
     public function getFetchMode()
     {
-        return $this->getFetchMode();
+        return $this->fetchMode;
     }
 
     public function setFetchMode($fetchMode)
