@@ -12,12 +12,11 @@
 
     },
     "require-dev": {
-        "phpspec/phpspec": "dev-master",
-        "phpspec/nyan-formatters": "dev-master",
         "codeception/verify": "dev-master",
-        "codeception/specify": "dev-master"
+        "codeception/specify": "dev-master",
+        "phpunit/phpunit": "4.2.6"
     },
     "autoload": {
-        "psr-0": {"": "src"}
+        "psr-4": {"CarlosGoce\\OdbcWrapper\\": "src"}
     }
 }
