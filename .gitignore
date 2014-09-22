@@ -1,2 +1,4 @@
 /vendor/
 /.idea
+/tests/fixtures/database/temp/*.CDX
+/tests/fixtures/database/temp/*.dbf

@@ -67,6 +67,22 @@ class Odbc
         return $this->fetchResultSet($resultSet);
     }
 
+    /**
+     * Similar to getTables but only returns an array with the names of the tables and nothing else
+     */
+    public function getTableNames()
+    {
+        $tables = $this->getTables();
+
+        $data = [];
+
+        foreach ($tables as $table) {
+            $data[] = $table['TABLENAME'];
+        }
+
+        return $data;
+    }
+
     public function getFetchMode()
     {
         return $this->fetchMode;

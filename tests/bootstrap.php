@@ -9,3 +9,11 @@ if ( ! function_exists('fixtures_path') )
         return __DIR__ . '/fixtures/' . $path;
     }
 }
+
+if ( ! function_exists('db_path') )
+{
+    function db_path()
+    {
+        return fixtures_path('database/temp/');
+    }
+}
