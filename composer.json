@@ -1,0 +1,21 @@
+{
+    "name": "carlosgoce/odbc-wrapper",
+    "description": "Simple Odbc Wrapper",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Carlos Goce",
+            "email": "carlosgoce@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "require-dev": {
+        "phpspec/phpspec": "dev-master",
+        "phpspec/nyan-formatters": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {"": "src"}
+    }
+}
