@@ -2,19 +2,33 @@
 
 namespace unit\CarlosGoce\OdbcWrapper;
 
-use unit\BaseUnit;
+use CarlosGoce\OdbcWrapper\Odbc;
+use PHPUnit_Framework_TestCase;
 
-class OdbcTest extends BaseUnit
+class OdbcTest extends PHPUnit_Framework_TestCase
 {
-    public function testFrameworkIsWorking()
+    /** @var Odbc */
+    protected $odbc;
+    protected $dsn = 'vfp86';
+
+    function __construct()
     {
-        $this->assertTrue(true);
+        $this->odbc = new Odbc();
     }
 
-    public function testTal()
+    public function testCanConnectToDatabase()
     {
-        $this->assertFalse(true);
+        $this->assertTrue( $this->odbc->connect($this->dsn) );
+        $this->assertFalse($this->odbc->connect('wrongDsn'));
+    }
+
+    public function testCanDisconnectFromDatabase()
+    {
+        $this->assertFalse($this->odbc->disconnect());
+        $this->assertTrue($this->odbc->connect($this->dsn));
+        $this->assertTrue($this->odbc->connect($this->dsn));
     }
 
 
-} 
+
+}

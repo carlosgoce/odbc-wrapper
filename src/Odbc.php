@@ -14,9 +14,23 @@ class Odbc
     const FETCH_AS_ARRAY  = 1;
     const FETCH_AS_OBJECT = 2;
 
+    /**
+     * @param $dsn
+     * @param string $user
+     * @param string $password
+     * @param null $cursorType
+     * @return bool
+     */
     public function connect($dsn, $user = '', $password = '', $cursorType = null)
     {
-        $this->connection = odbc_connect($dsn, $user, $password, $cursorType);
+        try{
+            $this->connection = odbc_connect($dsn, $user, $password, $cursorType);
+        }
+        catch (\Exception $e) {
+            $this->connection = false;
+        }
+
+        return (boolean)$this->connection;
     }
 
     public function disconnect()
